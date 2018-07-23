@@ -16,3 +16,10 @@
 #define Bluetooth_TxD 7                                                                 //  定義藍芽傳輸模組TxD接腳連接至arduino第7接腳
 #define History_quota 20                                                                //  Define History_quota - a quota of storage of history data
 
+SoftwareSerial BTSerial(Bluetooth_RxD, Bluetooth_TxD);                                  //  建立軟體定義串列埠BTSerial，用以控制藍芽模組
+
+//***副程式宣告區***
+void Lock_open(void);                                                                   //  宣告Lock_open開鎖副程式
+void Lock_close(void);                                                                  //  宣告Lock_close關鎖副程式
+
+
