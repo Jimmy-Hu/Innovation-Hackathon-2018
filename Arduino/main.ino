@@ -23,3 +23,7 @@ void Lock_open(void);                                                           
 void Lock_close(void);                                                                  //  宣告Lock_close關鎖副程式
 
 
+char Received_data[History_quota];
+
+// the setup function runs once when you press reset or power the board
+// setup程式於按下reset按鈕或通電時執行一次
