@@ -27,3 +27,9 @@ char Received_data[History_quota];
 
 // the setup function runs once when you press reset or power the board
 // setup程式於按下reset按鈕或通電時執行一次
+void setup()                                                                            //  setup程式
+{                                                                                       //  進入setup程式
+  //***設定接腳狀態***
+  pinMode(Lock_Control_Pin, OUTPUT);                                                    
+  digitalWrite(Lock_Control_Pin, HIGH);                                                 
+}
