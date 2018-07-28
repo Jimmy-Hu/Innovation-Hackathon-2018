@@ -1,6 +1,3 @@
-
-
-
 /*  Develop by Jimmy Hu, 2018
  *  Arduino Digital Pin4連接至繼電器，輸出High時SSR OFF，輸出Low時SSR ON。
  *  Version 2 : 藍芽傳'Lock_open'門鎖開，藍芽傳'Lock_close'門鎖關。
@@ -29,7 +26,13 @@ char Received_data[History_quota];
 // setup程式於按下reset按鈕或通電時執行一次
 void setup()                                                                            //  setup程式
 {                                                                                       //  進入setup程式
-  //***設定接腳狀態***
-  pinMode(Lock_Control_Pin, OUTPUT);                                                    
-  digitalWrite(Lock_Control_Pin, HIGH);                                                 
+  pinMode(Lock_Control_Pin, OUTPUT);                                                    //  設定電鎖控制接腳為輸出
+  digitalWrite(Lock_Control_Pin, HIGH);                                                 //  設定電鎖控制接腳為高態(SSR OFF)
+  pinMode(Bluetooth_KEY, OUTPUT);                                                       //  設定arduino連接藍芽傳輸模組KEY之接腳為輸出
+  digitalWrite(Bluetooth_KEY, LOW);                                                     //  設定藍芽傳輸模組KEY接腳為LOW
+  Serial.begin(38400);                                                                  //  開啟 Serial Port透過USB(uart)方式與電腦通信，鮑率為 38400bps (Bits Per Second)
+  BTSerial.begin(9600);                                                                 //  開啟軟體定義串列埠BTSerial，鮑率為 9600bps (Bits Per Second)
+
+  //***Initialize Received_data array***
+memset(Received_data, ' ', sizeof(Received_data));
 }
