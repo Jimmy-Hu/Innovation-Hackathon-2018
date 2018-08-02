@@ -36,3 +36,8 @@ void setup()                                                                    
   //***Initialize Received_data array***
 memset(Received_data, ' ', sizeof(Received_data));
 }
+// the loop function runs over and over again forever
+// loop程式將不斷重複執行
+void loop()                                                                             //  loop程式
+{                                                                                       //  進入loop程式
+}                                                                                       //  結束loop程式
