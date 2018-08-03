@@ -40,4 +40,8 @@ memset(Received_data, ' ', sizeof(Received_data));
 // loop程式將不斷重複執行
 void loop()                                                                             //  loop程式
 {                                                                                       //  進入loop程式
+  // Keep reading from HC-05 and send to Arduino Serial Monitor
+  if (BTSerial.available())                                                             //  若BTSerial串列埠正常開啟
+  {                                                                                     //  進入if敘述
+  }
 }                                                                                       //  結束loop程式
