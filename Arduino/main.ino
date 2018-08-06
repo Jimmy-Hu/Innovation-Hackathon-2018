@@ -44,6 +44,11 @@ void loop()                                                                     
   if (BTSerial.available())                                                             //  若BTSerial串列埠正常開啟
   {                                                                                     //  進入if敘述
     char BTSerial_read;                                                                 //  宣告BTSerial_read字元變數，用於記錄BTSerial.read()回傳字元
+
     BTSerial_read = BTSerial.read();                                                    //  將BTSerial.read()回傳字元填入BTSerial_read
+
+    Serial.write(BTSerial_read);
+
+    Received_data[History_quota - 1] = '\0';
   }
 }                                                                                       //  結束loop程式
