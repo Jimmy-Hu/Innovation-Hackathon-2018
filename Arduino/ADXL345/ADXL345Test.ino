@@ -81,3 +81,29 @@ void displayDataRate(void)
   }  
   Serial.println(" Hz");  
 }
+
+void displayRange(void)
+{
+  Serial.print  ("Range:         +/- "); 
+  
+  switch(accel.getRange())
+  {
+    case ADXL345_RANGE_16_G:
+      Serial.print  ("16 "); 
+      break;
+    case ADXL345_RANGE_8_G:
+      Serial.print  ("8 "); 
+      break;
+    case ADXL345_RANGE_4_G:
+      Serial.print  ("4 "); 
+      break;
+    case ADXL345_RANGE_2_G:
+      Serial.print  ("2 "); 
+      break;
+    default:
+      Serial.print  ("?? "); 
+      break;
+  }  
+  Serial.println(" g");  
+}
+
